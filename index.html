@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+  maximum-scale=5" />
+  <link rel="icon" href="devchallenges.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@60,700,0,0" />
+  <link rel="stylesheet" href="./dist/main.css">
+  <script defer src="./script.js"></script>
+  <title>Devchallenges</title>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar__logo">
+          <p>This Interior</p>
+        </div>
+        <ul class="navbar__menu">
+          <li class="active">Home</li>
+          <li>Collection</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+        <div id="hamburguer-menu" class="menu-animation backwards">
+          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+            <rect x="8" y="12" width="33" height="5" rx="2.5" fill="black" class="disappear-bar" />
+            <rect x="8" y="22" width="33" height="5" rx="2.5" fill="black" class="rotate-bar-1" />
+            <rect x="8" y="22" width="33" height="5" rx="2.5" fill="black" class="rotate-bar-2" />
+            <rect x="8" y="32" width="33" height="5" rx="2.5" fill="lightsalmon" class="disappear-bar" />
+          </svg>
+        </div>
+        <ul class="navbar__menu--mobile closed">
+          <li class="active">Home</li>
+          <li>Collection</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section-hero">
+
+      <div class="container">
+
+        <div class="hero__text-and-cta">
+          <h1>Modern interior</h1>
+          <p>A full-Service residential & commercial interior design and staging company offering professional
+            organizing & eco-services.</p>
+          <a>Read more <span class="material-symbols-outlined">
+              trending_flat
+            </span></a>
+        </div>
+
+        <div class="hero__image-and-blurb">
+          <div class="image">
+            <img src="./photo1.png" alt="A clean looking lobby">
+          </div>
+          <div class="blurb">
+            <div class="blurb__designer-info">
+              <div class="designer-info__pic">
+                <img src="./photo2.png" alt="Interior Designer's Picture">
+              </div>
+              <div class="designer-info__name-and-role">
+                <h4>Aliza Webber</h4>
+                <p>Interior designer</p>
+              </div>
+            </div>
+            <h2 class="blurb__title">Designed in 2020 by Aliza Webber</h2>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <section class="section-footer">
+      <div class="container">
+        <p>created by <a href="https://devchallenges.io/portfolio/Relmaur">Relmaur</a> - devChallenges.io</p>
+      </div>
+    </section>
+  </footer>
+
+</body>
+
+</html>

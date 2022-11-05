@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@400;700&display=swap");
+/*======
+* Resets
+=======*/
+/*===== Custom Reset =====*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* 1.2rem => 12px */
+  font-size: 62.5%;
+}
+
+/*===== ...Custom Reset =====*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*=========
+* Variables
+=========*/
+/*=========
+* Utilities
+==========*/
+footer .section-footer .container, main .section-hero .container, header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.menu-animation.forwards svg .disappear-bar {
+  transition: all 150ms ease-in;
+}
+.menu-animation.forwards svg .disappear-bar.disappear {
+  width: 0;
+  opacity: 0;
+}
+.menu-animation.forwards svg .rotate-bar-1, .menu-animation.forwards svg .rotate-bar-2 {
+  transform-origin: center;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+.menu-animation.forwards svg .rotate-bar-1 {
+  animation-name: fortyFiveForwards;
+}
+.menu-animation.forwards svg .rotate-bar-2 {
+  animation-name: minusFortyFiveForwards;
+}
+
+@keyframes fortyFiveForwards {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes minusFortyFiveForwards {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+.menu-animation.backwards svg .disappear-bar {
+  transition: all 150ms ease-in;
+}
+.menu-animation.backwards svg .disappear-bar.appear {
+  width: 33px;
+  opacity: 1;
+}
+.menu-animation.backwards svg .rotate-bar-1, .menu-animation.backwards svg .rotate-bar-2 {
+  transform-origin: center;
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+.menu-animation.backwards svg .rotate-bar-1 {
+  animation-name: fortyFiveBackwards;
+}
+.menu-animation.backwards svg .rotate-bar-2 {
+  animation-name: minusFortyFiveBackwards;
+}
+
+@keyframes fortyFiveBackwards {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes minusFortyFiveBackwards {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+body {
+  background-color: #181719;
+  color: white;
+}
+
+* a {
+  text-decoration: none;
+  color: white;
+}
+
+/*===== Heaeder =====*/
+header .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+header .container .navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .navbar .navbar__logo {
+  font-family: "Crimson Pro";
+  width: 100%;
+}
+header .container .navbar .navbar__logo:hover {
+  cursor: pointer;
+}
+header .container .navbar .navbar__logo p {
+  max-width: 100px;
+  display: block;
+  padding: 10px;
+  border: 1px solid white;
+}
+header .container .navbar .navbar__menu {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15%;
+}
+header .container .navbar .navbar__menu,
+header .container .navbar .navbar__menu--mobile {
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+header .container .navbar .navbar__menu li.active::after,
+header .container .navbar .navbar__menu--mobile li.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  margin-top: 5px;
+}
+header .container .navbar #hamburguer-menu {
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  display: none;
+}
+header .container .navbar #hamburguer-menu svg rect {
+  fill: white;
+}
+header .container .navbar #hamburguer-menu:hover {
+  cursor: pointer;
+}
+header .container .navbar .navbar__menu--mobile {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  row-gap: 5%;
+  background: #181719;
+}
+header .container .navbar .navbar__menu--mobile.closed {
+  display: none;
+}
+header .container .navbar .navbar__menu--mobile li:hover {
+  cursor: pointer;
+}
+header .container .navbar .navbar__menu li:hover {
+  cursor: pointer;
+}
+
+/*===== Main =====*/
+main .section-hero {
+  height: 62vh;
+}
+main .section-hero .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .section-hero .container .hero__text-and-cta {
+  width: 35%;
+}
+main .section-hero .container .hero__text-and-cta h1 {
+  font-family: "Lora";
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+main .section-hero .container .hero__text-and-cta p {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+main .section-hero .container .hero__text-and-cta a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Montserrat";
+}
+main .section-hero .container .hero__text-and-cta a:hover {
+  cursor: pointer;
+}
+main .section-hero .container .hero__image-and-blurb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+}
+main .section-hero .container .hero__image-and-blurb .image {
+  width: 100%;
+  height: 100%;
+}
+main .section-hero .container .hero__image-and-blurb .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .section-hero .container .hero__image-and-blurb .blurb {
+  position: absolute;
+  bottom: -130px;
+  right: 50px;
+  max-width: 400px;
+  background-color: #181719;
+  padding: 30px 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+main .section-hero .container .hero__image-and-blurb .blurb .blurb__designer-info {
+  font-family: "Montserrat";
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+main .section-hero .container .hero__image-and-blurb .blurb .blurb__designer-info .designer-info__pic {
+  width: 50px;
+  height: 50px;
+}
+main .section-hero .container .hero__image-and-blurb .blurb .blurb__designer-info .designer-info__pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
+}
+main .section-hero .container .hero__image-and-blurb .blurb .blurb__designer-info .designer-info__name-and-role h4 {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+main .section-hero .container .hero__image-and-blurb .blurb .blurb__designer-info .designer-info__name-and-role p {
+  font-size: 0.6rem;
+  color: #828282;
+}
+main .section-hero .container .hero__image-and-blurb .blurb .blurb__title {
+  font-family: "Lora";
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+/*===== Footer =====*/
+footer {
+  padding-top: 200px;
+}
+footer .section-footer .container {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+footer .section-footer .container p {
+  font-family: "Montserrat";
+}
+
+/*===== Media Queries =====*/
+@media (max-width: 1000px) {
+  main {
+    padding-bottom: 50%;
+  }
+  main .section-hero .container {
+    flex-direction: column;
+    row-gap: 50px;
+    height: auto;
+  }
+  main .section-hero .container .hero__text-and-cta, main .section-hero .container .hero__image-and-blurb {
+    width: 100%;
+  }
+  main .section-hero .container .hero__text-and-cta p {
+    max-width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  header .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  header .container .navbar .navbar__menu {
+    display: none;
+  }
+  header .container .navbar #hamburguer-menu {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

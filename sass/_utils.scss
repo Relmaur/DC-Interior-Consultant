@@ -1,0 +1,87 @@
+.menu-animation.forwards {
+    svg {
+      
+      & .disappear-bar {
+        transition: all 150ms ease-in;
+      }
+      & .disappear-bar.disappear {
+        width: 0;
+        opacity: 0;
+      }
+      
+      & .rotate-bar-1,
+      & .rotate-bar-2 {
+        transform-origin: center;
+        animation-duration: 200ms;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+      }
+      & .rotate-bar-1 {
+        animation-name: fortyFiveForwards;
+      }
+      & .rotate-bar-2 {
+        animation-name: minusFortyFiveForwards;
+      }
+    }
+  }
+  
+  @keyframes fortyFiveForwards {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes minusFortyFiveForwards {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-45deg);
+    }
+  }
+  
+  .menu-animation.backwards {
+    svg {
+      
+      & .disappear-bar {
+        transition: all 150ms ease-in;
+      }
+      & .disappear-bar.appear {
+        width: 33px;
+        opacity: 1;
+      }
+      
+      & .rotate-bar-1,
+      & .rotate-bar-2 {
+        transform-origin: center;
+        animation-duration: 100ms;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
+      }
+      & .rotate-bar-1 {
+        animation-name: fortyFiveBackwards;
+      }
+      & .rotate-bar-2 {
+        animation-name: minusFortyFiveBackwards;
+      }
+    }
+  }
+  
+  @keyframes fortyFiveBackwards {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes minusFortyFiveBackwards {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-45deg);
+    }
+  }
